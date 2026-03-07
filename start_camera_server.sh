@@ -15,9 +15,9 @@ REPO_DIR="/home/unitree/GR00T-WholeBodyControl"
 
 echo "=== RealSense Camera Server ==="
 
-# Step 1: Kill anything that might be holding the camera
-echo "[1/3] Killing existing camera processes..."
-pkill -9 -f camera_stream 2>/dev/null && echo "  Killed camera_stream" || true
+# Step 1: Kill only the process holding the camera device
+echo "[1/3] Releasing camera device..."
+pkill -9 -f videohub_pc4 2>/dev/null && echo "  Killed videohub_pc4" || true
 pkill -9 -f "realsense.*--server" 2>/dev/null && echo "  Killed old realsense server" || true
 sleep 1
 
