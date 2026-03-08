@@ -481,3 +481,6 @@ class DeploymentConfig(BaseConfig, ComposedCameraClientConfig):
 
     image_publish: bool = False
     """Enable image publishing in simulation loop (passed to run_sim_loop.py)"""
+
+    add_stereo_camera: bool = True
+    """Whether to add stereo camera for data collection."""
