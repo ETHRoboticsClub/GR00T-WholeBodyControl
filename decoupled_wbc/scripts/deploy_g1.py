@@ -324,6 +324,9 @@ class G1Deployment:
             str(self.config.camera_port),
         ]
 
+        if not self.config.add_stereo_camera:
+            cmd.extend(["--no-add_stereo_camera"])
+
         if not self._run_in_tmux("data", cmd, pane_index=1):
             print("ERROR: Data collection failed to start!")
             print("Continuing without data collection...")
